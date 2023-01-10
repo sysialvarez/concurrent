@@ -52,6 +52,7 @@ class Servidor():
 						data = c.recv(32)
 						if data: self.broadcast(data,c)
 						with open('u22179427AI1.txt', 'a') as f:
+							# Revision finalizada
 							f.write(pickle.loads(data) + '\n')
 					except: pass
 
