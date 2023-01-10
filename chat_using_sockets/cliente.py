@@ -11,7 +11,7 @@ class Cliente():
 		self.s.connect((host, int(port)))
 		self.hostname=hostname
 		self.s.send(hostname.encode())
-		print('\n\tProceso con PID = ',os.getpid(), '\n\tHilo PRINCIPAL con ID =',threading.currentThread().getName(), '\n\tHilo en modo DAEMON = ', threading.currentThread().isDaemon(),'\n\tTotal Hilos activos en este punto del programa =', threading.active_count())
+		print('\n\tProceso con PID = ',os.getpid(), '\n\tHilo PRINCIPAL con ID =',threading.current_thread().getName(), '\n\tHilo en modo DAEMON = ', threading.current_thread().isDaemon(),'\n\tTotal Hilos activos en este punto del programa =', threading.active_count())
 		threading.Thread(target=self.recibir, daemon=True).start()
 
 		while True:
